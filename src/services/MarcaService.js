@@ -9,7 +9,7 @@ export const obtenerTodasMarcas = () => {
 
 
 export const guardarMarcas=(marca)=>{
-    return axiosConfig.post('/estados', marca)// estado es el body que recibe el metodo del formulario del front 
+    return axiosConfig.post('/mascas', marca)// estado es el body que recibe el metodo del formulario del front 
 };// se crea el metodo para guardar los estadops en el axios config para pasarlos a la bd 
 
 
