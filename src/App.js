@@ -1,24 +1,10 @@
-import logo from './logo.svg';
-import './App.css';
+import MainRouter from "./routes/MainRouter";// se debe importar las rutas en este caso la barra de navegacion
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    
+    <MainRouter/> // se trae la barra de routes 
   );
 }
 
