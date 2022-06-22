@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import { obtenerTodasMarcas } from '../../services/MarcaService';
+
 import { obtenerTodosEquipos } from '../../services/TiposEquipos';
 import { obtenerTodosUsuarios } from '../../services/UsuarioService';
 
 export default function Modal({inventario, changeInventario}) {
     const [usuarios, setUsuarios] = useState([]);
-    const [marcas, setMarcas] = useState([]);
+
     const [tiposEquipos, setTiposEquipos] = useState([]);
     
     useEffect( () => {
@@ -22,19 +22,7 @@ export default function Modal({inventario, changeInventario}) {
       }, []);
 
 
-    useEffect( () => {
-      const getUsuarios = () => {
-        obtenerTodasMarcas()
-          .then(r => {
-              console.log(r);
-              setMarcas(r.data)
-          }).catch(e => {
-              console.log(e)
-          })
-      }
-      getUsuarios();
-    }, []);
-
+ 
 
     useEffect( () => {
       const getUsuarios = () => {
@@ -208,9 +196,7 @@ export default function Modal({inventario, changeInventario}) {
                   </label>
                   <select className="form-select" id="usuario" required="">
                     <option value="">Marcas</option>
-                    {marcas.map((u) => {
-                      return <option value={u._id}>{u.nombre}</option>;
-                    })}
+                 
                   </select>
                 </div>
 

@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function Modal({
-  marca,
+  estado,
   loading,
   closeModal,
   hidden,
@@ -21,7 +21,7 @@ export default function Modal({
         <div className="modal-content">
           <div className="modal-header">
             <h5 className="modal-title" id="exampleModalLabel">
-              {marca._id ? "Editar Estado" : "Nuevo Estado"}
+              {estado._id ? "Editar Estado" : "Nuevo Estado"}
             </h5>
             {loading && (
               <div class="spinner-grow spinner-grow-sm" role="status">
@@ -39,16 +39,16 @@ export default function Modal({
           </div>
           <div className="modal-body">
             <form onSubmit={add}>
-              <input type={hidden} name="_id" value={marca._id}></input>
+              <input type={hidden} name="_id" value={estado._id}></input>
               <div className="mb-3">
                 <label htmlFor="recipient-name" className="col-form-label">
                   Nombre:
                 </label>
                 <input
-                  disabled={marca._id ? true : false}
-                  readOnly={marca._id ? true : false}
+                  disabled={estado._id ? true : false}
+                  readOnly={estado._id ? true : false}
                   required
-                  value={marca.nombre}
+                  value={estado.nombre}
                   name="nombre"
                   type="text"
                   className="form-control"
@@ -60,12 +60,12 @@ export default function Modal({
                   Estado:
                 </label>
                 <select
-                  disabled={marca._id ? false : true}
-                  readOnly={marca._id ? false : true}
+                  disabled={estado._id ? false : true}
+                  readOnly={estado._id ? false : true}
                   required
                   className="form-select"
                   aria-label="Default select example"
-                  value={marca.estado}
+                  value={estado.estado}
                   name="estado"
                   onChange={changeEstado}
                 >
